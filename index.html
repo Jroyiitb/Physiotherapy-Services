@@ -1,0 +1,221 @@
+%%html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physiotherapy Home Service</title>
+    <style>
+        /* Design Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #fff;
+            color: #007bff; /* Blue for general medical theme */
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-bottom: 4px solid #28a745;
+        }
+        h1 { margin: 0; font-size: 28px; }
+        .subtitle { color: #555; font-size: 14px; margin-top: 5px; }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x900/?physiotherapy,hospital');
+            background-size: cover;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .btn:hover { background-color: #0056b3; }
+
+        /* General Info Profile */
+        .info-box {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #28a745;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Form Section */
+        .booking-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Services Grid */
+        .services-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .service-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-weight: bold;
+            color: #555;
+            border: 1px solid #eee;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 30px 20px;
+            margin-top: 50px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Professional Physiotherapy Services</h1>
+        <div class="subtitle">Best Care at Your Doorstep</div>
+    </header>
+
+    <div class="hero">
+        <h2>Expert Physiotherapy Aapke Ghar Par</h2>
+        <p>Advanced Treatment & Rehabilitation</p>
+        <a href="#book-now" class="btn">Appointment Book Karein</a>
+    </div>
+
+    <div class="container">
+
+        <div class="info-box">
+            <h3 style="margin-top:0; color: #28a745;">👨‍⚕️ Our Expert Team</h3>
+            <p><strong>Experience:</strong> Highly Qualified & Certified Physiotherapists</p>
+            <p>Humare paas experienced doctors hain jo aapke ghar aakar best treatment denge.</p>
+        </div>
+
+        <div id="book-now" class="booking-form">
+            <h2 style="text-align: center; color: #007bff;">Ghar Baithe Doctor Bulayein</h2>
+            <p style="text-align: center;">Form bharein, hum aapko WhatsApp par contact karenge.</p>
+            <form onsubmit="sendToWhatsapp(event)">
+                <label>Marij ka Naam (Patient Name):</label>
+                <input type="text" id="name" required placeholder="Naam likhein">
+
+                <label>Mobile Number:</label>
+                <input type="tel" id="phone" required placeholder="Phone number">
+
+                <label>Address (Pata):</label>
+                <textarea id="address" rows="2" required placeholder="Apna address likhein"></textarea>
+
+                <label>Kis cheez ka ilaaj chahiye?</label>
+                <select id="problem">
+                    <option value="Back/Neck Pain">Kamar/Gardan Dard (Back/Neck Pain)</option>
+                    <option value="Chiropractic">Chiropractic Adjustment</option>
+                    <option value="Stroke/Paralysis">Paralysis / Stroke</option>
+                    <option value="Sports Injury">Sports Injury</option>
+                    <option value="Cupping Therapy">Cupping Therapy</option>
+                    <option value="Dry Needling">Dry Needling</option>
+                    <option value="Pediatric/Special Child">Bachho ki Therapy (Special Education)</option>
+                    <option value="Other">Koi aur samasya</option>
+                </select>
+
+                <button type="submit" class="btn" style="width: 100%;">WhatsApp Request Bhejein 📲</button>
+            </form>
+        </div>
+
+        <div class="services-section">
+            <h2>Humari Suvidhayein (Services)</h2>
+            <div class="services-grid">
+                <div class="service-box">🦴 Chiropractic</div>
+                <div class="service-box">👐 Physiotherapy</div>
+                <div class="service-box">🧩 Occupational Therapy</div>
+                <div class="service-box">🗣️ Speech Therapy</div>
+                <div class="service-box">💉 Dry Needling</div>
+                <div class="service-box">🩸 Cupping Therapy</div>
+                <div class="service-box">🧠 Special Education</div>
+                <div class="service-box">🩹 Kinesio Taping</div>
+                <div class="service-box">🏃 Sports Rehab</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <h3>Contact Us</h3>
+            <p>📞 Call/WhatsApp: <strong>+91 9572161515</strong></p>
+        </div>
+        <p>© 2025 Physiotherapy Home Care</p>
+    </footer>
+
+    <script>
+        function sendToWhatsapp(e) {
+            e.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var address = document.getElementById("address").value;
+            var problem = document.getElementById("problem").value;
+
+            // Log the submission details to the console
+            console.log("Form Submission Log:");
+            console.log("Name: " + name);
+            console.log("Phone: " + phone);
+            console.log("Address: " + address);
+            console.log("Problem: " + problem);
+
+            var myPhoneNumber = "+919572161515";
+
+            var url = "https://wa.me/" + myPhoneNumber + "?text="
+            + "*🏥 New Home Visit Request*" + "%0a"
+            + "-------------------------" + "%0a"
+            + "*Name:* " + name + "%0a"
+            + "*Phone:* " + phone + "%0a"
+            + "*Address:* " + address + "%0a"
+            + "*Treatment Needed:* " + problem + "%0a"
+            + "-------------------------";
+
+            window.open(url, '_blank').focus();
+        }
+    </script>
+
+</body>
+</html>
